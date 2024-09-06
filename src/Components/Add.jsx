@@ -47,6 +47,7 @@ const Add = () => {
           position: "fixed",
           bottom: 20,
           left: { xs: "calc(50% - 25px)", md: 30 },
+          zIndex: 50,
           opacity: { xs: "0.8", md: 10 },
         }}
       >
@@ -65,7 +66,8 @@ const Add = () => {
       >
         <Box
           sx={{ width: { xs: 250, md: 400 }, height: { xs: 260, md: 280 } }}
-          bgcolor={"background.default"} color={"text.primary"}
+          bgcolor={"background.default"}
+          color={"text.primary"}
           p={3}
           borderRadius={2}
         >

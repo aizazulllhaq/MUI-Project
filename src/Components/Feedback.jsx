@@ -1,61 +1,43 @@
-import { Favorite, FavoriteBorder, MoreVert, Share } from "@mui/icons-material";
-import {
-  Avatar,
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
-  CardMedia,
-  Checkbox,
-  IconButton,
-  Typography,
-} from "@mui/material";
-import React from "react";
+import { Box } from "@mui/material";
+import CardComponent from "./Card";
+import firstPostImage from "../assets/1st.jpg";
+import secondPostImage from "../assets/2nd.jpg";
+import thirdPostImage from "../assets/3rd.jpg";
+
+const postsList = [
+  {
+    avatarImg: firstPostImage,
+    postContent:
+      "Did you know that the concept of aliens has been around for centuries? From ancient civilizations to modern science fiction, the idea of extraterrestrial life has fascinated humanity.",
+    postImage:
+      "https://img.freepik.com/fotos-premium/astronautas-cultivando-culturas-em-um-planeta-alienigena-agricultura-futura_526992-1674.jpg",
+  },
+  {
+    avatarImg: secondPostImage,
+    postContent:
+      "The famous Roswell incident of 1947 is one of the most well-known UFO sightings. It has inspired countless theories and stories about alien encounters.",
+    postImage:
+      "https://as2.ftcdn.net/v2/jpg/05/62/83/43/1000_F_562834363_fz6OyNfFyYnR4JR8j10tJ71X77Be72Lw.jpg",
+  },
+  {
+    avatarImg: thirdPostImage,
+    postContent:
+      "NASA's search for extraterrestrial intelligence (SETI) continues to scan the cosmos for signals that could indicate the presence of alien civilizations.",
+    postImage:
+      "https://as2.ftcdn.net/v2/jpg/05/81/00/39/1000_F_581003993_JeoEsT3HN46VU5xvrFnwmXqBvmFDlcao.jpg",
+  },
+];
 
 const Feedback = () => {
   return (
     <Box flex={4} p={2}>
-      <Card sx={{ margin: 4 }}>
-        <CardHeader
-          avatar={
-            <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-              R
-            </Avatar>
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVert />
-            </IconButton>
-          }
-          title="Shrimp and Chorizo Paella"
-          subheader="September 14, 2016"
+      {postsList?.map((post) => (
+        <CardComponent
+          avatarImg={post.avatarImg}
+          postContent={post.postContent}
+          postImage={post.postImage}
         />
-        <CardMedia
-          component="img"
-          height="20%"
-          image="https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1725494400&semt=ais_hybrid"
-          alt="Paella dish"
-        />
-        <CardContent>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests. Add 1 cup of frozen peas along with
-            the mussels, if you like.
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <Checkbox
-              icon={<FavoriteBorder />}
-              checkedIcon={<Favorite sx={{ color: "red" }} />}
-            />
-          </IconButton>
-          <IconButton aria-label="share">
-            <Share />
-          </IconButton>
-        </CardActions>
-      </Card>
+      ))}
     </Box>
   );
 };
