@@ -35,8 +35,8 @@ const Rightbar = () => {
           Online Friends
         </Typography>
         <AvatarGroup
-          max={8}
-          total={10}
+          max={6}
+          total={8}
           sx={{
             display: "flex",
             alignItems: "center",
