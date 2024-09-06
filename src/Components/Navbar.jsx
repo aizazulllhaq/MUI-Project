@@ -21,10 +21,14 @@ const StyledToolbar = styled(Toolbar)({
 });
 
 const Search = styled("div")(({ theme }) => ({
-  backgroundColor: "white",
-  padding: "0px 10px",
-  width: "40%",
-}));
+    backgroundColor: theme.palette.background.default,
+    padding: "0px 10px",
+    width: "40%",
+    "& .MuiInputBase-input::placeholder": {
+      color: theme.palette.text.primary,  // Change the color based on theme
+    },
+  }));
+  
 
 const Icons = styled(Box)(({ theme }) => ({
   display: "none",
@@ -55,7 +59,7 @@ const Navbar = () => {
         </Typography>
         <CodeIcon sx={{ display: { xs: "block", sm: "none" } }} />
         <Search sx={{ borderRadius: "5px" }}>
-          <InputBase placeholder="search..."></InputBase>
+          <InputBase placeholder="search..." />
         </Search>
         {/* sm > user detail  */}
         <Icons>

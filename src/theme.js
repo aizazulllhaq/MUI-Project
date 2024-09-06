@@ -5,6 +5,7 @@ const theme = createTheme({
     blacky: {
       main: "#121212",
     },
+    mode: "dark",
   },
   breakpoints: {
     values: {
