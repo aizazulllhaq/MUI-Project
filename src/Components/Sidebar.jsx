@@ -27,7 +27,7 @@ const Sidebar = ({ mode, setMode, Sidebar }) => {
       sx={{
         display: { xs: Sidebar ? "block" : "none", sm: "block" }, 
         position: Sidebar && "fixed",
-        top: 0,
+        top: 30,
         left: 0,
         backgroundColor: mode === "light" ? "white" : "#121212", 
         color: mode === "light" ? "black" : "white", 
