@@ -21,7 +21,6 @@ import {
   PersonAdd,
   VideocamOutlined,
 } from "@mui/icons-material";
-import azPic from "../assets/az.jpeg";
 
 const StyledModel = styled(Modal)({
   display: "flex",
@@ -75,7 +74,7 @@ const Add = () => {
             Create Post
           </Typography>
           <UserBox>
-            <Avatar src={azPic} alt="" />
+            <Avatar src={"https://p1.hiclipart.com/preview/633/241/287/student-software-developer-computer-programming-programming-language-computer-software-python-source-code-comment-png-clipart.jpg"} alt="" />
             <Typography variant="span">Aizaz Ul haq</Typography>
           </UserBox>
           <TextField

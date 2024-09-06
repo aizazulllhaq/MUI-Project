@@ -11,8 +11,11 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import azPic from "../assets/az.jpeg";
 import React from "react";
+import firstImg from "../assets/1st.jpg";
+import secondImg from "../assets/2nd.jpg";
+import thirdImg from "../assets/3rd.jpg";
+import forthImg from "../assets/4th.jpg";
 
 const Rightbar = () => {
   return (
@@ -23,33 +26,33 @@ const Rightbar = () => {
       }}
       p={2}
     >
-      <Box position={"fixed"}   sx={{
+      <Box
+        position={"fixed"}
+        sx={{
           width: 300, // Fixed width
-          height: '100vh', // Full viewport height
-          overflow: 'auto',
+          height: "100vh", // Full viewport height
+          overflow: "auto",
           p: 2,
-          boxSizing: 'border-box',
-          bgcolor: 'background.paper', // Optional: to ensure background color is consistent
-        }}>
+          boxSizing: "border-box",
+          bgcolor: "background.paper", // Optional: to ensure background color is consistent
+        }}
+      >
         <Typography variant="h6" fontWeight={100} my={2}>
           Online Friends
         </Typography>
         <AvatarGroup
-          max={6}
-          total={8}
+          max={5}
+          total={7}
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <Avatar alt="Remy Sharp" src={azPic} />
-          <Avatar alt="Travis Howard" src={azPic} />
-          <Avatar alt="Cindy Baker" src={azPic} />
-          <Avatar alt="Agnes Walker" src={azPic} />
-          <Avatar alt="Cindy Baker" src={azPic} />
-          <Avatar alt="Travis Howard" src={azPic} />
-          <Avatar alt="Trevor Henderson" src={azPic} />
+          <Avatar alt="Travis Howard" src={thirdImg} />
+          <Avatar alt="Remy Sharp" src={secondImg} />
+          <Avatar alt="Cindy Baker" src={forthImg} />
+          <Avatar alt="Cindy Baker" src={firstImg} />
         </AvatarGroup>
         <Typography variant="h6" fontWeight={100} my={2}>
           Latest Photos

@@ -16,8 +16,8 @@ import {
   NotificationAdd,
   Menu as MenuBar,
   List,
+  Pets,
 } from "@mui/icons-material";
-import azPic from "../assets/az.jpeg";
 import { useState } from "react";
 
 const StyledToolbar = styled(Toolbar)({
@@ -32,6 +32,7 @@ const Search = styled("div")(({ theme }) => ({
   "& .MuiInputBase-input::placeholder": {
     color: theme.palette.text.primary, // Change the color based on theme
   },
+  boxShadow:"1px 1px 10px 1px gray"
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
@@ -56,12 +57,12 @@ const Navbar = ({ Sidebar, setSideBar }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" bgcolor={"background.default"} color={"text.primary"}>
       <StyledToolbar>
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          LLC
+        𝙼-𝚔𝚕𝚘𝚞𝚍𝚜
         </Typography>
-        <CodeIcon sx={{ display: { xs: "block", sm: "none" } }} />
+        <Pets sx={{ display: { xs: "block", sm: "none" } }} />
         <Search sx={{ borderRadius: "5px" }}>
           <InputBase placeholder="search..." />
         </Search>
@@ -75,18 +76,26 @@ const Navbar = ({ Sidebar, setSideBar }) => {
           </Badge>
           <Avatar
             sx={{ width: 30, height: 30 }}
-            src={azPic}
+            src={
+              "https://pics.craiyon.com/2024-05-31/O4HnksVxTeej3N6FShhjcw.webp"
+            }
             onClick={(e) => setOpen(true)}
           />
         </Icons>
         {/* sm < user detail  */}
-        <UserBox >
+        <UserBox>
           {Sidebar ? (
             <List onClick={(e) => setSideBar(false)} />
           ) : (
             <MenuBar onClick={(e) => setSideBar(true)} />
           )}
-          <Avatar sx={{ width: 30, height: 30 }} src={azPic} onClick={(e) => setOpen(true)}/>
+          <Avatar
+            sx={{ width: 30, height: 30 }}
+            src={
+              "https://pics.craiyon.com/2024-05-31/O4HnksVxTeej3N6FShhjcw.webp"
+            }
+            onClick={(e) => setOpen(true)}
+          />
           <Typography variant="span">Aizaz</Typography>
         </UserBox>
       </StyledToolbar>
