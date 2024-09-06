@@ -20,7 +20,6 @@ import {
 import React from "react";
 
 const Sidebar = ({ mode, setMode, Sidebar }) => {
-  console.log("dfd", Sidebar);
   return (
     <Box
       flex={1}

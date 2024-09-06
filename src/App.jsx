@@ -17,17 +17,15 @@ const App = () => {
     },
   });
 
-  // Handle window resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 600 ) {
-        setSideBar(false); // Reset sidebar state on large screens
+        setSideBar(false); 
       }
     };
 
     window.addEventListener("resize", handleResize);
 
-    // Cleanup listener on component unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
