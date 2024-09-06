@@ -3,7 +3,6 @@ import {
   Article,
   Group,
   Home,
-  Inbox,
   ModeNight,
   Person,
   Redeem,
@@ -20,9 +19,24 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const Sidebar = ({ mode, setMode }) => {
+const Sidebar = ({ mode, setMode, Sidebar }) => {
+  console.log("dfd", Sidebar);
   return (
-    <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
+    <Box
+      flex={1}
+      p={2}
+      sx={{
+        display: { xs: Sidebar ? "block" : "none", sm: "block" }, 
+        position: Sidebar && "fixed",
+        top: 0,
+        left: 0,
+        backgroundColor: mode === "light" ? "white" : "#121212", 
+        color: mode === "light" ? "black" : "white", 
+        height: "100vh",
+        zIndex: 10,
+        width: { xs: "60vw", sm: "auto" }, 
+      }}
+    >
       <Box position={"fixed"}>
         <List>
           <ListItem disablePadding>

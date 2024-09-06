@@ -16,12 +16,33 @@ import React from "react";
 
 const Rightbar = () => {
   return (
-    <Box flex={2} sx={{ display: { xs: "none", md: "block" } }} p={2}>
-      <Box position={"fixed"} overflow={"auto"}>
+    <Box
+      flex={2}
+      sx={{
+        display: { xs: "none", md: "block" },
+      }}
+      p={2}
+    >
+      <Box position={"fixed"}   sx={{
+          width: 300, // Fixed width
+          height: '100vh', // Full viewport height
+          overflow: 'auto',
+          p: 2,
+          boxSizing: 'border-box',
+          bgcolor: 'background.paper', // Optional: to ensure background color is consistent
+        }}>
         <Typography variant="h6" fontWeight={100} my={2}>
           Online Friends
         </Typography>
-        <AvatarGroup max={8} total={10}>
+        <AvatarGroup
+          max={8}
+          total={10}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Avatar alt="Remy Sharp" src={azPic} />
           <Avatar alt="Travis Howard" src={azPic} />
           <Avatar alt="Cindy Baker" src={azPic} />
@@ -33,7 +54,11 @@ const Rightbar = () => {
         <Typography variant="h6" fontWeight={100} my={2}>
           Latest Photos
         </Typography>
-        <ImageList cols={3} rowHeight={110}  sx={{ overflow: "hidden",marginBottom:"20px"}}>
+        <ImageList
+          cols={3}
+          rowHeight={110}
+          sx={{ overflow: "hidden", marginBottom: "20px" }}
+        >
           <ImageListItem>
             <img
               src={
@@ -79,14 +104,7 @@ const Rightbar = () => {
               primary="Brunch this weekend?"
               secondary={
                 <React.Fragment>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    sx={{ color: "text.primary", display: "inline" }}
-                  >
-                    Ali Connors
-                  </Typography>
-                  {" — I'll be in your neighborhood doing errands this…"}
+                  {" I'll be in your neighborhood doing errands this…"}
                 </React.Fragment>
               }
             />
@@ -103,38 +121,7 @@ const Rightbar = () => {
               primary="Summer BBQ"
               secondary={
                 <React.Fragment>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    sx={{ color: "text.primary", display: "inline" }}
-                  >
-                    to Scott, Alex, Jennifer
-                  </Typography>
-                  {" — Wish I could come, but I'm out of town this…"}
-                </React.Fragment>
-              }
-            />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
-            <ListItemAvatar>
-              <Avatar
-                alt="Cindy Baker"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM3zFwWdKtddOIOjrhjqW2LAdKvrj_Ikfa-nEkRSwIvG3AywxOl4DwiwOnpkZbH71o4es&usqp=CAU"
-              />
-            </ListItemAvatar>
-            <ListItemText
-              primary="Oui Oui"
-              secondary={
-                <React.Fragment>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    sx={{ color: "text.primary", display: "inline" }}
-                  >
-                    Sandra Adams
-                  </Typography>
-                  {" — Do you have Paris recommendations? Have you ever…"}
+                  {" Wish I could come, but I'm out of town this…"}
                 </React.Fragment>
               }
             />

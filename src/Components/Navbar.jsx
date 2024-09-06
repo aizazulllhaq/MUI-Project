@@ -11,7 +11,12 @@ import {
   Typography,
 } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
-import { Mail, NotificationAdd } from "@mui/icons-material";
+import {
+  Mail,
+  NotificationAdd,
+  Menu as MenuBar,
+  List,
+} from "@mui/icons-material";
 import azPic from "../assets/az.jpeg";
 import { useState } from "react";
 
@@ -21,14 +26,13 @@ const StyledToolbar = styled(Toolbar)({
 });
 
 const Search = styled("div")(({ theme }) => ({
-    backgroundColor: theme.palette.background.default,
-    padding: "0px 10px",
-    width: "40%",
-    "& .MuiInputBase-input::placeholder": {
-      color: theme.palette.text.primary,  // Change the color based on theme
-    },
-  }));
-  
+  backgroundColor: theme.palette.background.default,
+  padding: "0px 10px",
+  width: "40%",
+  "& .MuiInputBase-input::placeholder": {
+    color: theme.palette.text.primary, // Change the color based on theme
+  },
+}));
 
 const Icons = styled(Box)(({ theme }) => ({
   display: "none",
@@ -48,7 +52,7 @@ const UserBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const Navbar = () => {
+const Navbar = ({ Sidebar, setSideBar }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -76,8 +80,13 @@ const Navbar = () => {
           />
         </Icons>
         {/* sm < user detail  */}
-        <UserBox onClick={(e) => setOpen(true)}>
-          <Avatar sx={{ width: 30, height: 30 }} src={azPic} />
+        <UserBox >
+          {Sidebar ? (
+            <List onClick={(e) => setSideBar(false)} />
+          ) : (
+            <MenuBar onClick={(e) => setSideBar(true)} />
+          )}
+          <Avatar sx={{ width: 30, height: 30 }} src={azPic} onClick={(e) => setOpen(true)}/>
           <Typography variant="span">Aizaz</Typography>
         </UserBox>
       </StyledToolbar>
