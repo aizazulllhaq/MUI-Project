@@ -13,7 +13,7 @@ import {
 
 const CardComponent = ({ avatarImg, postContent, postImage }) => {
   return (
-    <Card sx={{ margin: 4 }}>
+    <Card sx={{ margin: 4}}>
       <CardHeader
         avatar={<Avatar src={avatarImg} aria-label="recipe"></Avatar>}
         action={

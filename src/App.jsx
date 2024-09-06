@@ -8,7 +8,7 @@ import Add from "./Components/Add";
 import { ThemeProvider } from "@emotion/react";
 
 const App = () => {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState("dark");
   const [sideBar, setSideBar] = useState(false);
 
   const darkTheme = createTheme({
@@ -19,8 +19,8 @@ const App = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 600 ) {
-        setSideBar(false); 
+      if (window.innerWidth >= 600) {
+        setSideBar(false);
       }
     };
 
@@ -32,7 +32,7 @@ const App = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <Box bgcolor={"background.default"} color={"text.primary"}>
-        <Navbar Sidebar={sideBar} setSideBar={setSideBar} />
+        <Navbar mode={mode} Sidebar={sideBar} setSideBar={setSideBar} />
         <Stack direction={"row"} spacing={2} justifyContent={"space-evenly"}>
           <Sidebar
             mode={mode}

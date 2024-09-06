@@ -28,11 +28,11 @@ const StyledToolbar = styled(Toolbar)({
 const Search = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   padding: "0px 10px",
-  width: "40%",
+  width:"40%",
   "& .MuiInputBase-input::placeholder": {
     color: theme.palette.text.primary, // Change the color based on theme
   },
-  boxShadow:"1px 1px 10px 1px gray"
+  boxShadow: "1px 1px 10px 1px gray",
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
@@ -53,14 +53,17 @@ const UserBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const Navbar = ({ Sidebar, setSideBar }) => {
+const Navbar = ({ Sidebar, setSideBar, mode }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <AppBar position="sticky" bgcolor={"background.default"} color={"text.primary"}>
+    <AppBar
+      position="sticky"
+      color={"text.primary"}
+    >
       <StyledToolbar>
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-        𝙼-𝚔𝚕𝚘𝚞𝚍𝚜
+          𝙼-𝚔𝚕𝚘𝚞𝚍𝚜
         </Typography>
         <Pets sx={{ display: { xs: "block", sm: "none" } }} />
         <Search sx={{ borderRadius: "5px" }}>
